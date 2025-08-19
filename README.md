@@ -1,0 +1,1 @@
+An AI agent that generates sentiments for a given list of inputs
