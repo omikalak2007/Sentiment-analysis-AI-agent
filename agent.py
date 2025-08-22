@@ -6,9 +6,10 @@ from operator import add as add_messages
 from langchain_groq import ChatGroq
 from langchain_core.tools import tool
 from operator import add as add_messages
+from dotenv import load_dotenv
 
-
-GROQ_API_KEY = "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"
+load_dotenv()
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 llm1 = ChatGroq(model="llama-3.1-8b-instant",temperature=0,api_key=GROQ_API_KEY)
 sentiment_prompt = """You are an AI that performs sentiment analysis on a given text.
