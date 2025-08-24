@@ -7,8 +7,12 @@ from langchain_groq import ChatGroq
 from langchain_core.tools import tool
 from operator import add as add_messages
 from dotenv import load_dotenv
+from pathlib import Path
 
-load_dotenv()
+file_path = Path("keys.env")  # relative path
+absolute_path = file_path.resolve()
+
+load_dotenv(dotenv_path=absolute_path)
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 llm1 = ChatGroq(model="llama-3.1-8b-instant",temperature=0,api_key=GROQ_API_KEY)
